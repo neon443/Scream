@@ -21,6 +21,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
+		let preview = CaptureVideoPreview(layer: sr.contentLayer)
+		preview.frame.size = window.contentView!.frame.size
+		window.contentView?.addSubview(preview)
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -34,3 +37,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+class CaptureVideoPreview: NSView {
+	init(layer: CALayer) {
+		super.init(frame: .zero)
+		wantsLayer = true
+		self.layer = layer
+		layer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError()
+	}
+}

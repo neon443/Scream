@@ -37,11 +37,16 @@ class CaptureEngine: NSObject {
 			streamOutput.pcmBufferHandler = { print($0) }
 			
 			do {
+				streamOutput.frameBufferHandler = { frame in
+//					print("got frame \(frame.size) at \(frame.contentRect)")
+					continuation.yield(frame)
+				}
 				stream = SCStream(filter: filter, configuration: config, delegate: streamOutput)
 				
 				try stream?.addStreamOutput(streamOutput, type: .screen, sampleHandlerQueue: videoSampleBufferQueue)
-				try stream?.addStreamOutput(streamOutput, type: .audio, sampleHandlerQueue: audioSampleBufferQueue)
-				try stream?.addStreamOutput(streamOutput, type: .microphone, sampleHandlerQueue: videoSampleBufferQueue)
+//				try stream?.addStreamOutput(streamOutput, type: .audio, sampleHandlerQueue: audioSampleBufferQueue)
+//				try stream?.addStreamOutput(streamOutput, type: .microphone, sampleHandlerQueue: videoSampleBufferQueue)
+				stream?.startCapture()
 			} catch {
 				continuation.finish(throwing: error)
 			}

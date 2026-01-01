@@ -10,7 +10,7 @@ import ScreenCaptureKit
 
 class ScreenRecorder: NSObject {
 	var isRunning: Bool = false
-	var isAppExluded: Bool = false
+	var isAppExluded: Bool = true
 	var isAudioEnabled: Bool = false
 	
 	var filter: SCContentFilter?
@@ -30,8 +30,8 @@ class ScreenRecorder: NSObject {
 	var streamConfig: SCStreamConfiguration {
 		var streamConfig = SCStreamConfiguration()
 		//TODO: hdr
-		streamConfig.capturesAudio = isAudioEnabled
-		streamConfig.excludesCurrentProcessAudio = false
+//		streamConfig.capturesAudio = isAudioEnabled
+//		streamConfig.excludesCurrentProcessAudio = false
 //		streamConfig.captureMicrophone = true
 		
 		streamConfig.width = Int(NSScreen.main?.frame.width ?? 100)
@@ -42,6 +42,8 @@ class ScreenRecorder: NSObject {
 		return streamConfig
 	}
 	let captureEngine = CaptureEngine()
+	
+	var contentLayer = CALayer()
 	
 	var canRecord: Bool {
 		true
@@ -70,7 +72,7 @@ class ScreenRecorder: NSObject {
 		do {
 			isRunning = true
 			for try await frame in captureEngine.startCapture(config: streamConfig, filter: filter!) {
-				print(frame)
+				contentLayer.contents = frame.surface
 			}
 		} catch {
 			isRunning = false
@@ -87,10 +89,11 @@ class ScreenRecorder: NSObject {
 }
 
 extension ScreenRecorder: SCContentSharingPickerObserver  {
+	@available(macOS 14, *)
 	func contentSharingPicker(_ picker: SCContentSharingPicker, didCancelFor stream: SCStream?) {
 		print("canceleed picker")
 	}
-	
+	@available(macOS 14, *)
 	func contentSharingPicker(_ picker: SCContentSharingPicker, didUpdateWith filter: SCContentFilter, for stream: SCStream?) {
 		print(picker.description)
 	}
