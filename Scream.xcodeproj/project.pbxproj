@@ -3,8 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
+
+/* Begin PBXBuildFile section */
+		A98E8BF02F05B2A0006D4458 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BEB2F05B2A0006D4458 /* AppDelegate.swift */; };
+		A98E8BF12F05B2A0006D4458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E8BEC2F05B2A0006D4458 /* Assets.xcassets */; };
+		A98E8BF22F05B2A0006D4458 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98E8BEE2F05B2A0006D4458 /* MainMenu.xib */; };
+		A98E8BF52F05B2A2006D4458 /* ScreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BF32F05B2A2006D4458 /* ScreamTests.swift */; };
+		A98E8BF92F05B2A5006D4458 /* ScreamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BF62F05B2A5006D4458 /* ScreamUITests.swift */; };
+		A98E8BFA2F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BF72F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift */; };
+		A98E8BFD2F05D28D006D4458 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */; };
+		A98E8BFF2F06F46C006D4458 /* SCStreamOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BFE2F06F46C006D4458 /* SCStreamOutput.swift */; };
+		A98E8C012F06F496006D4458 /* StreamDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8C002F06F496006D4458 /* StreamDelegate.swift */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A98E8BCF2F05B26D006D4458 /* PBXContainerItemProxy */ = {
@@ -27,25 +39,17 @@
 		A98E8BC02F05B26B006D4458 /* Scream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E8BCE2F05B26D006D4458 /* ScreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E8BD82F05B26D006D4458 /* ScreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98E8BEB2F05B2A0006D4458 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A98E8BEC2F05B2A0006D4458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A98E8BED2F05B2A0006D4458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A98E8BF32F05B2A2006D4458 /* ScreamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamTests.swift; sourceTree = "<group>"; };
+		A98E8BF62F05B2A5006D4458 /* ScreamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamUITests.swift; sourceTree = "<group>"; };
+		A98E8BF72F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A98E8BFB2F05C7B6006D4458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
+		A98E8BFE2F06F46C006D4458 /* SCStreamOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStreamOutput.swift; sourceTree = "<group>"; };
+		A98E8C002F06F496006D4458 /* StreamDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		A98E8BC22F05B26B006D4458 /* Scream */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Scream;
-			sourceTree = "<group>";
-		};
-		A98E8BD12F05B26D006D4458 /* ScreamTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ScreamTests;
-			sourceTree = "<group>";
-		};
-		A98E8BDB2F05B26D006D4458 /* ScreamUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ScreamUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A98E8BBD2F05B26B006D4458 /* Frameworks */ = {
@@ -75,9 +79,9 @@
 		A98E8BB72F05B26B006D4458 = {
 			isa = PBXGroup;
 			children = (
-				A98E8BC22F05B26B006D4458 /* Scream */,
-				A98E8BD12F05B26D006D4458 /* ScreamTests */,
-				A98E8BDB2F05B26D006D4458 /* ScreamUITests */,
+				A98E8BEF2F05B2A0006D4458 /* Scream */,
+				A98E8BF42F05B2A2006D4458 /* ScreamTests */,
+				A98E8BF82F05B2A5006D4458 /* ScreamUITests */,
 				A98E8BC12F05B26B006D4458 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +94,37 @@
 				A98E8BD82F05B26D006D4458 /* ScreamUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A98E8BEF2F05B2A0006D4458 /* Scream */ = {
+			isa = PBXGroup;
+			children = (
+				A98E8BFB2F05C7B6006D4458 /* Info.plist */,
+				A98E8BEB2F05B2A0006D4458 /* AppDelegate.swift */,
+				A98E8BEC2F05B2A0006D4458 /* Assets.xcassets */,
+				A98E8BEE2F05B2A0006D4458 /* MainMenu.xib */,
+				A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */,
+				A98E8C002F06F496006D4458 /* StreamDelegate.swift */,
+				A98E8BFE2F06F46C006D4458 /* SCStreamOutput.swift */,
+			);
+			path = Scream;
+			sourceTree = "<group>";
+		};
+		A98E8BF42F05B2A2006D4458 /* ScreamTests */ = {
+			isa = PBXGroup;
+			children = (
+				A98E8BF32F05B2A2006D4458 /* ScreamTests.swift */,
+			);
+			path = ScreamTests;
+			sourceTree = "<group>";
+		};
+		A98E8BF82F05B2A5006D4458 /* ScreamUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A98E8BF62F05B2A5006D4458 /* ScreamUITests.swift */,
+				A98E8BF72F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift */,
+			);
+			path = ScreamUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,9 +141,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A98E8BC22F05B26B006D4458 /* Scream */,
 			);
 			name = Scream;
 			packageProductDependencies = (
@@ -130,9 +162,6 @@
 			dependencies = (
 				A98E8BD02F05B26D006D4458 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				A98E8BD12F05B26D006D4458 /* ScreamTests */,
-			);
 			name = ScreamTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +181,6 @@
 			);
 			dependencies = (
 				A98E8BDA2F05B26D006D4458 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				A98E8BDB2F05B26D006D4458 /* ScreamUITests */,
 			);
 			name = ScreamUITests;
 			packageProductDependencies = (
@@ -187,6 +213,7 @@
 				};
 			};
 			buildConfigurationList = A98E8BBB2F05B26B006D4458 /* Build configuration list for PBXProject "Scream" */;
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -195,7 +222,6 @@
 			);
 			mainGroup = A98E8BB72F05B26B006D4458;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = A98E8BC12F05B26B006D4458 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -212,6 +238,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98E8BF12F05B2A0006D4458 /* Assets.xcassets in Resources */,
+				A98E8BF22F05B2A0006D4458 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98E8BF02F05B2A0006D4458 /* AppDelegate.swift in Sources */,
+				A98E8BFF2F06F46C006D4458 /* SCStreamOutput.swift in Sources */,
+				A98E8C012F06F496006D4458 /* StreamDelegate.swift in Sources */,
+				A98E8BFD2F05D28D006D4458 /* ScreenRecorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98E8BF52F05B2A2006D4458 /* ScreamTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98E8BF92F05B2A5006D4458 /* ScreamUITests.swift in Sources */,
+				A98E8BFA2F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +302,17 @@
 			targetProxy = A98E8BD92F05B26D006D4458 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A98E8BEE2F05B2A0006D4458 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A98E8BED2F05B2A0006D4458 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A98E8BE02F05B26D006D4458 /* Debug */ = {
@@ -400,8 +446,19 @@
 				DEVELOPMENT_TEAM = 8JGND254B7;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scream/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -433,8 +490,19 @@
 				DEVELOPMENT_TEAM = 8JGND254B7;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scream/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
