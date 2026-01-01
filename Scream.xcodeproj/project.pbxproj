@@ -14,8 +14,8 @@
 		A98E8BF92F05B2A5006D4458 /* ScreamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BF62F05B2A5006D4458 /* ScreamUITests.swift */; };
 		A98E8BFA2F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BF72F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift */; };
 		A98E8BFD2F05D28D006D4458 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */; };
-		A98E8BFF2F06F46C006D4458 /* SCStreamOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BFE2F06F46C006D4458 /* SCStreamOutput.swift */; };
 		A98E8C012F06F496006D4458 /* StreamDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8C002F06F496006D4458 /* StreamDelegate.swift */; };
+		A9D7225F2F070FE600050BB0 /* CaptureEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,8 @@
 		A98E8BF72F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A98E8BFB2F05C7B6006D4458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
-		A98E8BFE2F06F46C006D4458 /* SCStreamOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCStreamOutput.swift; sourceTree = "<group>"; };
 		A98E8C002F06F496006D4458 /* StreamDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamDelegate.swift; sourceTree = "<group>"; };
+		A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +79,7 @@
 		A98E8BB72F05B26B006D4458 = {
 			isa = PBXGroup;
 			children = (
+				A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */,
 				A98E8BEF2F05B2A0006D4458 /* Scream */,
 				A98E8BF42F05B2A2006D4458 /* ScreamTests */,
 				A98E8BF82F05B2A5006D4458 /* ScreamUITests */,
@@ -105,7 +106,6 @@
 				A98E8BEE2F05B2A0006D4458 /* MainMenu.xib */,
 				A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */,
 				A98E8C002F06F496006D4458 /* StreamDelegate.swift */,
-				A98E8BFE2F06F46C006D4458 /* SCStreamOutput.swift */,
 			);
 			path = Scream;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98E8BF02F05B2A0006D4458 /* AppDelegate.swift in Sources */,
-				A98E8BFF2F06F46C006D4458 /* SCStreamOutput.swift in Sources */,
+				A9D7225F2F070FE600050BB0 /* CaptureEngine.swift in Sources */,
 				A98E8C012F06F496006D4458 /* StreamDelegate.swift in Sources */,
 				A98E8BFD2F05D28D006D4458 /* ScreenRecorder.swift in Sources */,
 			);
