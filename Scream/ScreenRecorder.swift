@@ -26,6 +26,7 @@ class ScreenRecorder: NSObject {
 ////		}
 //		filter = SCContentFilter(display: availableContent.displays.first!, excludingApplications: excludedApps, exceptingWindows: [])
 //	}
+	var scaleFactor: Int { Int(NSScreen.main?.backingScaleFactor ?? 2) }
 	
 	var streamConfig: SCStreamConfiguration {
 		var streamConfig = SCStreamConfiguration()
@@ -34,10 +35,10 @@ class ScreenRecorder: NSObject {
 //		streamConfig.excludesCurrentProcessAudio = false
 //		streamConfig.captureMicrophone = true
 		
-		streamConfig.width = Int(NSScreen.main?.frame.width ?? 100)
-		streamConfig.height = Int(NSScreen.main?.frame.height ?? 100)
+		streamConfig.width = Int(NSScreen.main?.frame.width ?? 100) * scaleFactor
+		streamConfig.height = Int(NSScreen.main?.frame.height ?? 100) * scaleFactor
 		
-		streamConfig.minimumFrameInterval = CMTime(value: 1, timescale: 20)
+		streamConfig.minimumFrameInterval = CMTime(value: 1, timescale: 60)
 		streamConfig.queueDepth = 5
 		return streamConfig
 	}
