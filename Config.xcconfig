@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  Scream
+//
+//  Created by neon443 on 01/01/2026.
+//
+
+
+VERSION = 0.1
+BUILD = 1
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project

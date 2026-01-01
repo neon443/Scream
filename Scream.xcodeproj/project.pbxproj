@@ -15,6 +15,7 @@
 		A98E8BFA2F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BF72F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift */; };
 		A98E8BFD2F05D28D006D4458 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */; };
 		A9D7225F2F070FE600050BB0 /* CaptureEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */; };
+		A9D722612F07304C00050BB0 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A9D722602F07304C00050BB0 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A98E8BFB2F05C7B6006D4458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
 		A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureEngine.swift; sourceTree = "<group>"; };
+		A9D722602F07304C00050BB0 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		A98E8BB72F05B26B006D4458 = {
 			isa = PBXGroup;
 			children = (
+				A9D722602F07304C00050BB0 /* Config.xcconfig */,
 				A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */,
 				A98E8BEF2F05B2A0006D4458 /* Scream */,
 				A98E8BF42F05B2A2006D4458 /* ScreamTests */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98E8BF12F05B2A0006D4458 /* Assets.xcassets in Resources */,
+				A9D722612F07304C00050BB0 /* Config.xcconfig in Resources */,
 				A98E8BF22F05B2A0006D4458 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +317,7 @@
 /* Begin XCBuildConfiguration section */
 		A98E8BE02F05B26D006D4458 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D722602F07304C00050BB0 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -377,6 +382,7 @@
 		};
 		A98E8BE12F05B26D006D4458 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D722602F07304C00050BB0 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -438,7 +444,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "${BUILD}";
 				DEVELOPMENT_TEAM = 8JGND254B7;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -463,7 +469,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "${VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neon443.Scream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -483,7 +489,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "${BUILD}";
 				DEVELOPMENT_TEAM = 8JGND254B7;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -508,7 +514,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "${VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neon443.Scream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
