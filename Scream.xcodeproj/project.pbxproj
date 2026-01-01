@@ -14,7 +14,6 @@
 		A98E8BF92F05B2A5006D4458 /* ScreamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BF62F05B2A5006D4458 /* ScreamUITests.swift */; };
 		A98E8BFA2F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BF72F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift */; };
 		A98E8BFD2F05D28D006D4458 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */; };
-		A98E8C012F06F496006D4458 /* StreamDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8C002F06F496006D4458 /* StreamDelegate.swift */; };
 		A9D7225F2F070FE600050BB0 /* CaptureEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +46,6 @@
 		A98E8BF72F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A98E8BFB2F05C7B6006D4458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
-		A98E8C002F06F496006D4458 /* StreamDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamDelegate.swift; sourceTree = "<group>"; };
 		A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +103,6 @@
 				A98E8BEC2F05B2A0006D4458 /* Assets.xcassets */,
 				A98E8BEE2F05B2A0006D4458 /* MainMenu.xib */,
 				A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */,
-				A98E8C002F06F496006D4458 /* StreamDelegate.swift */,
 			);
 			path = Scream;
 			sourceTree = "<group>";
@@ -266,7 +263,6 @@
 			files = (
 				A98E8BF02F05B2A0006D4458 /* AppDelegate.swift in Sources */,
 				A9D7225F2F070FE600050BB0 /* CaptureEngine.swift in Sources */,
-				A98E8C012F06F496006D4458 /* StreamDelegate.swift in Sources */,
 				A98E8BFD2F05D28D006D4458 /* ScreenRecorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

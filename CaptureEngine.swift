@@ -22,10 +22,47 @@ struct CapturedFrame {
 
 class CaptureEngine: NSObject {
 	private var stream: SCStream?
-	var streamOutput: StreamDelegate?
+	var streamOutput: StreamHandler?
+	let videoSampleBufferQueue = DispatchQueue(label: "videoSampleBufferQueue")
+	let audioSampleBufferQueue = DispatchQueue(label: "audioSampleBufferQueue")
+	let micSampleBufferQueue = DispatchQueue(label: "micSampleBufferQueue")
+	
+	private var continuation: AsyncThrowingStream<CapturedFrame, Error>.Continuation?
+	
 	func startCapture(config: SCStreamConfiguration, filter: SCContentFilter) -> AsyncThrowingStream<CapturedFrame, Error> {
 		AsyncThrowingStream<CapturedFrame, Error> { continuation in
-//			let streamOutput = SCStreamOutput
+			let streamOutput = StreamHandler(continuation: continuation)
+			self.streamOutput = streamOutput
+			streamOutput.frameBufferHandler = { continuation.yield($0) }
+			streamOutput.pcmBufferHandler = { print($0) }
+			
+			do {
+				stream = SCStream(filter: filter, configuration: config, delegate: streamOutput)
+				
+				try stream?.addStreamOutput(streamOutput, type: .screen, sampleHandlerQueue: videoSampleBufferQueue)
+				try stream?.addStreamOutput(streamOutput, type: .audio, sampleHandlerQueue: audioSampleBufferQueue)
+				try stream?.addStreamOutput(streamOutput, type: .microphone, sampleHandlerQueue: videoSampleBufferQueue)
+			} catch {
+				continuation.finish(throwing: error)
+			}
+		}
+	}
+	
+	func stopCapture() async {
+		do {
+			try await stream?.stopCapture()
+			continuation?.finish()
+		} catch {
+			continuation?.finish(throwing: error)
+		}
+	}
+	
+	func update(config: SCStreamConfiguration, filter: SCContentFilter) async {
+		do {
+			try await stream?.updateConfiguration(config)
+			try await stream?.updateContentFilter(filter)
+		} catch {
+			print(error)
 		}
 	}
 }
@@ -45,16 +82,16 @@ class StreamHandler: NSObject, SCStreamOutput, SCStreamDelegate {
 		
 		switch type {
 		case .screen:
-//			guard let frame =
+			guard let frame = createFrame(for: sampleBuffer) else { return }
+			frameBufferHandler?(frame)
 		case .audio:
-			<#code#>
+			handleAudio(for: sampleBuffer)
 		case .microphone:
-			<#code#>
+			print("idk what to do with mic buffers")
 		}
 	}
 	
 	func createFrame(for sampleBuffer: CMSampleBuffer) -> CapturedFrame? {
-		
 		guard let attachmentsArr = CMSampleBufferGetSampleAttachmentsArray(
 			sampleBuffer,
 			createIfNecessary: false
