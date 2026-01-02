@@ -24,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let preview = CaptureVideoPreview(layer: sr.contentLayer)
 		preview.frame.size = window.contentView!.frame.size
 		window.contentView?.addSubview(preview)
+		Button(self)
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {

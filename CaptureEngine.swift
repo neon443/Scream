@@ -7,6 +7,7 @@
 
 import Foundation
 import ScreenCaptureKit
+import VideoToolbox
 
 struct CapturedFrame {
 	static var invalid: CapturedFrame {
@@ -30,7 +31,30 @@ class CaptureEngine: NSObject {
 	private var continuation: AsyncThrowingStream<CapturedFrame, Error>.Continuation?
 	
 	func startCapture(config: SCStreamConfiguration, filter: SCContentFilter) -> AsyncThrowingStream<CapturedFrame, Error> {
-		AsyncThrowingStream<CapturedFrame, Error> { continuation in
+		let videoEncoderSpec = [kVTVideoEncoderSpecification_EnableLowLatencyRateControl: true as CFBoolean] as CFDictionary
+		
+		let sourceImageBufferAttrs = [kCVPixelBufferPixelFormatTypeKey: 1 as CFNumber] as CFDictionary
+		var compressionSessionOut: VTCompressionSession?
+		let err = VTCompressionSessionCreate(
+			allocator: kCFAllocatorDefault,
+			width: 1600,
+			height: 900,
+			codecType: kCMVideoCodecType_H264,
+			encoderSpecification: videoEncoderSpec,
+			imageBufferAttributes: sourceImageBufferAttrs,
+			compressedDataAllocator: nil,
+			outputCallback: { outputCallbackRefCon, sourceFrameRefCon, status, infoFlags, samplebuffer in
+				print(status)
+			},
+			refcon: nil,
+			compressionSessionOut: &compressionSessionOut
+		)
+		
+		guard err == noErr, let compressionSession = compressionSessionOut else {
+			fatalError()
+		}
+		
+		return AsyncThrowingStream<CapturedFrame, Error> { continuation in
 			let streamOutput = StreamHandler(continuation: continuation)
 			self.streamOutput = streamOutput
 			streamOutput.frameBufferHandler = { continuation.yield($0) }
