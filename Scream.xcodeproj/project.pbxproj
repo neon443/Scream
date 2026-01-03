@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A94E29F72F09B569006E583D /* ScreamPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E29F62F09B569006E583D /* ScreamPacket.swift */; };
 		A98E8BF02F05B2A0006D4458 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BEB2F05B2A0006D4458 /* AppDelegate.swift */; };
 		A98E8BF12F05B2A0006D4458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E8BEC2F05B2A0006D4458 /* Assets.xcassets */; };
 		A98E8BF22F05B2A0006D4458 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98E8BEE2F05B2A0006D4458 /* MainMenu.xib */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A94E29F62F09B569006E583D /* ScreamPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamPacket.swift; sourceTree = "<group>"; };
 		A98E8BC02F05B26B006D4458 /* Scream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E8BCE2F05B26D006D4458 /* ScreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E8BD82F05B26D006D4458 /* ScreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 		A98E8BB72F05B26B006D4458 = {
 			isa = PBXGroup;
 			children = (
+				A94E29F62F09B569006E583D /* ScreamPacket.swift */,
 				A9D722602F07304C00050BB0 /* Config.xcconfig */,
 				A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */,
 				A98E8BEF2F05B2A0006D4458 /* Scream */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94E29F72F09B569006E583D /* ScreamPacket.swift in Sources */,
 				A98E8BF02F05B2A0006D4458 /* AppDelegate.swift in Sources */,
 				A9D7225F2F070FE600050BB0 /* CaptureEngine.swift in Sources */,
 				A98E8BFD2F05D28D006D4458 /* ScreenRecorder.swift in Sources */,
