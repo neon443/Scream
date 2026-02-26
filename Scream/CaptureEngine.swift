@@ -42,7 +42,7 @@ class CaptureEngine: NSObject {
 			allocator: kCFAllocatorDefault,
 			width: 3200,
 			height: 1800,
-			codecType: kCMVideoCodecType_H264,
+			codecType: kCMVideoCodecType_HEVC,
 			encoderSpecification: videoEncoderSpec,
 			imageBufferAttributes: sourceImageBufferAttrs,
 			compressedDataAllocator: nil,
@@ -71,7 +71,7 @@ class CaptureEngine: NSObject {
 													frameProperties: nil,
 													infoFlagsOut: nil
 					) { status, infoFlags, sampleBuffer in
-						print()
+//						print()
 						
 					}
 //													outputHandler: self.outputHandler)
@@ -144,7 +144,7 @@ class CaptureEngine: NSObject {
 		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_ExpectedFrameRate, value: expectedFrameRate as CFNumber)
 		if err != noErr { print("failed to set to framerte \(err)") }
 
-		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_ProfileLevel, value: kVTProfileLevel_H264_Main_AutoLevel)
+		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_ProfileLevel, value: kVTProfileLevel_HEVC_Main_AutoLevel)
 		if err != noErr { print("failed to set to profile level \(err)") }
 		
 		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_AverageBitRate, value: 10 as CFNumber)
