@@ -51,7 +51,7 @@
 		A98E8BF32F05B2A2006D4458 /* ScreamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamTests.swift; sourceTree = "<group>"; };
 		A98E8BF62F05B2A5006D4458 /* ScreamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamUITests.swift; sourceTree = "<group>"; };
 		A98E8BF72F05B2A5006D4458 /* ScreamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A98E8BFB2F05C7B6006D4458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A98E8BFB2F05C7B6006D4458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
 		A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureEngine.swift; sourceTree = "<group>"; };
 		A9D722602F07304C00050BB0 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -82,11 +82,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A98010162F50DD4600A58EF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A98E8BEE2F05B2A0006D4458 /* MainMenu.xib */,
+				A98010142F50D9B100A58EF7 /* CaptureVideoPreview.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A98010172F50DD5300A58EF7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A98E8BFB2F05C7B6006D4458 /* Info.plist */,
+				A98E8BEC2F05B2A0006D4458 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A98E8BB72F05B26B006D4458 = {
 			isa = PBXGroup;
 			children = (
 				A9D722602F07304C00050BB0 /* Config.xcconfig */,
 				A98E8BEF2F05B2A0006D4458 /* Scream */,
+				A98010172F50DD5300A58EF7 /* Resources */,
 				A98E8BF42F05B2A2006D4458 /* ScreamTests */,
 				A98E8BF82F05B2A5006D4458 /* ScreamUITests */,
 				A98E8BC12F05B26B006D4458 /* Products */,
@@ -106,15 +125,12 @@
 		A98E8BEF2F05B2A0006D4458 /* Scream */ = {
 			isa = PBXGroup;
 			children = (
-				A98E8BFB2F05C7B6006D4458 /* Info.plist */,
 				A98E8BEB2F05B2A0006D4458 /* AppDelegate.swift */,
-				A98E8BEC2F05B2A0006D4458 /* Assets.xcassets */,
-				A98E8BEE2F05B2A0006D4458 /* MainMenu.xib */,
 				A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */,
 				A98010122F50D19D00A58EF7 /* UDPServer.swift */,
 				A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */,
 				A94E29F62F09B569006E583D /* ScreamPacket.swift */,
-				A98010142F50D9B100A58EF7 /* CaptureVideoPreview.swift */,
+				A98010162F50DD4600A58EF7 /* Views */,
 			);
 			path = Scream;
 			sourceTree = "<group>";
@@ -472,7 +488,7 @@
 				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Scream/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -517,7 +533,7 @@
 				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Scream/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
