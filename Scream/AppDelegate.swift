@@ -10,7 +10,8 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 	let sr = ScreenRecorder()
-	let udpserver = UDPServerImplementation(port: 03067)
+	let udpclient = UDPClientImplementation(port: 03067)
+	let udpserver = UDPServerImplementation(host: "localhost", port: 03067, initialMessage: "kys")
 
 	@IBOutlet var window: NSWindow!
 
@@ -20,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	@IBAction func Button2(_ sender: Any) {
+		udpclient.start()
 		udpserver.start()
 	}
 	

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A909CC142F50FFDA00D98D39 /* UDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909CC132F50FFDA00D98D39 /* UDPServer.swift */; };
 		A94E29F72F09B569006E583D /* ScreamPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E29F62F09B569006E583D /* ScreamPacket.swift */; };
-		A98010132F50D19D00A58EF7 /* UDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98010122F50D19D00A58EF7 /* UDPServer.swift */; };
+		A98010132F50D19D00A58EF7 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98010122F50D19D00A58EF7 /* UDPClient.swift */; };
 		A98010152F50D9B100A58EF7 /* CaptureVideoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98010142F50D9B100A58EF7 /* CaptureVideoPreview.swift */; };
 		A98E8BF02F05B2A0006D4458 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E8BEB2F05B2A0006D4458 /* AppDelegate.swift */; };
 		A98E8BF12F05B2A0006D4458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E8BEC2F05B2A0006D4458 /* Assets.xcassets */; };
@@ -39,8 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A909CC132F50FFDA00D98D39 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
 		A94E29F62F09B569006E583D /* ScreamPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreamPacket.swift; sourceTree = "<group>"; };
-		A98010122F50D19D00A58EF7 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
+		A98010122F50D19D00A58EF7 /* UDPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
 		A98010142F50D9B100A58EF7 /* CaptureVideoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureVideoPreview.swift; sourceTree = "<group>"; };
 		A98E8BC02F05B26B006D4458 /* Scream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E8BCE2F05B26D006D4458 /* ScreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +129,8 @@
 			children = (
 				A98E8BEB2F05B2A0006D4458 /* AppDelegate.swift */,
 				A98E8BFC2F05D28D006D4458 /* ScreenRecorder.swift */,
-				A98010122F50D19D00A58EF7 /* UDPServer.swift */,
+				A98010122F50D19D00A58EF7 /* UDPClient.swift */,
+				A909CC132F50FFDA00D98D39 /* UDPServer.swift */,
 				A9D7225E2F070FE600050BB0 /* CaptureEngine.swift */,
 				A94E29F62F09B569006E583D /* ScreamPacket.swift */,
 				A98010162F50DD4600A58EF7 /* Views */,
@@ -290,11 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A909CC142F50FFDA00D98D39 /* UDPServer.swift in Sources */,
 				A94E29F72F09B569006E583D /* ScreamPacket.swift in Sources */,
 				A98E8BF02F05B2A0006D4458 /* AppDelegate.swift in Sources */,
 				A9D7225F2F070FE600050BB0 /* CaptureEngine.swift in Sources */,
 				A98E8BFD2F05D28D006D4458 /* ScreenRecorder.swift in Sources */,
-				A98010132F50D19D00A58EF7 /* UDPServer.swift in Sources */,
+				A98010132F50D19D00A58EF7 /* UDPClient.swift in Sources */,
 				A98010152F50D9B100A58EF7 /* CaptureVideoPreview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

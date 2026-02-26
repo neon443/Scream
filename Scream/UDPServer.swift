@@ -8,55 +8,53 @@
 import Foundation
 import Network
 
-final class UDPServerImplementation: Sendable {
-	private let connectionListener: NWListener
-	
-	//init a udp server at x port
-	init(port: UInt16) {
-		connectionListener = try! NWListener(
-			using: .udp,
-			on: NWEndpoint.Port(integerLiteral: port)
-		)
-		
-		connectionListener.newConnectionHandler = { [weak self] connection in
-			connection.start(queue: .global())
-			self?.receive(on: connection)
-		}
-		
-		connectionListener.stateUpdateHandler = { state in
-			print("state: \(state)")
-		}
-	}
-}
-
 protocol UDPServer {
 	func start()
 	func stop()
+	func send(message: String)
+}
+
+final class UDPServerImplementation: Sendable {
+	private let connection: NWConnection
+	
+	init(host: String, port: UInt16, initialMessage: String) {
+		connection = NWConnection(
+			host: NWEndpoint.Host(host),
+			port: NWEndpoint.Port(integerLiteral: port),
+			using: .udp
+		)
+		connection.stateUpdateHandler = { [weak self] state in
+			print("server state is \(state)")
+			if state == .ready {
+				self?.send(message: initialMessage)
+			}
+		}
+	}
 }
 
 extension UDPServerImplementation: UDPServer {
 	func start() {
-		connectionListener.start(queue: .global())
-		print("server started")
+		connection.start(queue: .global())
+		print("server startedf")
 	}
 	
 	func stop() {
-		connectionListener.cancel()
-		print("server stoped")
+		connection.cancel()
+		print("server stopped")
 	}
-}
-
-private extension UDPServerImplementation {
-	func receive(on connection: NWConnection) {
-		connection.receiveMessage { data, contentContext, isComplete, error in
-			if let error {
-				print("error \(error)")
-			}
-			
-			if let data, 
-			   let message = String(data: data, encoding: .utf8) {
-				print(message)
-			}
+	
+	func send(message: String) {
+		guard let data = message.data(using: .utf8) else {
+			print("server: encode message failed")
+			return
 		}
+		
+		connection.send(content: data, completion: .contentProcessed({ error in
+			if let error {
+				print("server: failed to send \(error)")
+			} else {
+				print("server: message sent")
+			}
+		}))
 	}
 }
