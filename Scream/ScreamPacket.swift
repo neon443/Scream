@@ -16,4 +16,12 @@ struct ScreamPacket: Codable, Identifiable {
 	var index: Int
 	var packetsInChunk: Int
 	var isKeyframe: Bool
+	
+	init(timestamp: Double, data: Data, index: Int, packetsInChunk: Int, isKeyframe: Bool) {
+		self.id = timestamp
+		self.data = data
+		self.index = index
+		self.packetsInChunk = packetsInChunk
+		self.isKeyframe = isKeyframe
+	}
 }

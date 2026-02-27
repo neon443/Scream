@@ -31,6 +31,8 @@ class CaptureEngine: NSObject {
 	let audioSampleBufferQueue = DispatchQueue(label: "audioSampleBufferQueue")
 	let micSampleBufferQueue = DispatchQueue(label: "micSampleBufferQueue")
 	
+	let udpServer = UDPServerImplementation(host: "localhost", port: 03067, initialMessage: nil)
+	
 	private var continuation: AsyncThrowingStream<CapturedFrame, Error>.Continuation?
 	
 	func startCapture(config: SCStreamConfiguration, filter: SCContentFilter) -> AsyncThrowingStream<CapturedFrame, Error> {
@@ -71,8 +73,17 @@ class CaptureEngine: NSObject {
 													frameProperties: nil,
 													infoFlagsOut: nil
 					) { status, infoFlags, sampleBuffer in
-//						print()
-						
+						guard let sampleBuffer else { return }
+						let packet = ScreamPacket(
+							timestamp: sampleBuffer.presentationTimeStamp.seconds,
+							data: try! sampleBuffer.dataBuffer!.dataBytes(),
+							index: 1,
+							packetsInChunk: 1,
+							isKeyframe: true
+						)
+						let data = try! JSONEncoder().encode(packet)
+						self.udpServer.send(data)
+						print(packet)
 					}
 //													outputHandler: self.outputHandler)
 					continuation.yield(frame)
@@ -150,10 +161,10 @@ class CaptureEngine: NSObject {
 		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_AverageBitRate, value: 10 as CFNumber)
 		if err != noErr { print("failed to set to framerte \(err)") }
 		
-		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_MaxKeyFrameInterval, value: 60 as CFNumber)
+		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_MaxKeyFrameInterval, value: 0 as CFNumber)
 		if err != noErr { print("failed to set to keyframe interval \(err)") }
 		
-		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_MaxKeyFrameIntervalDuration, value: 1 as CFNumber)
+		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_MaxKeyFrameIntervalDuration, value: 0 as CFNumber)
 		if err != noErr { print("failed to set to keyframe interval duratation \(err)") }
 		
 //		err = VTSessionSetProperty(session, key: kVTCompressionPropertyKey_SuggestedLookAheadFrameCount, value: 1 as CFNumber)

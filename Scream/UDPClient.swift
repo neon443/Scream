@@ -9,6 +9,7 @@ import Foundation
 import Network
 
 final class UDPClientImplementation: Sendable {
+//	public static let shared: UDPClientImplementation = .init(port: 03067)
 	private let connectionListener: NWListener
 	
 	//init a udp client at x port
@@ -26,6 +27,7 @@ final class UDPClientImplementation: Sendable {
 		connectionListener.stateUpdateHandler = { state in
 			print("state: \(state)")
 		}
+		start()
 	}
 }
 
