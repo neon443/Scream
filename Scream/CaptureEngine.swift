@@ -74,6 +74,7 @@ class CaptureEngine: NSObject {
 													infoFlagsOut: nil
 					) { status, infoFlags, sampleBuffer in
 						guard let sampleBuffer else { return }
+						AppDelegate.controller.streamView.display(sampleBuffer: sampleBuffer)
 						let packet = ScreamPacket(
 							timestamp: sampleBuffer.presentationTimeStamp.seconds,
 							data: try! sampleBuffer.dataBuffer!.dataBytes(),
@@ -84,6 +85,7 @@ class CaptureEngine: NSObject {
 						let data = try! JSONEncoder().encode(packet)
 						self.udpServer.send(data)
 						print(packet)
+						AppDelegate.controller.streamView.enqueue(packet: packet)
 					}
 //													outputHandler: self.outputHandler)
 					continuation.yield(frame)
