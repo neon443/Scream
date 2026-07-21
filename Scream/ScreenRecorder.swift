@@ -89,17 +89,18 @@ class ScreenRecorder: NSObject {
 	}
 }
 
-extension ScreenRecorder: SCContentSharingPickerObserver  {
-	@available(macOS 14, *)
-	func contentSharingPicker(_ picker: SCContentSharingPicker, didCancelFor stream: SCStream?) {
-		print("canceleed picker")
-	}
-	@available(macOS 14, *)
-	func contentSharingPicker(_ picker: SCContentSharingPicker, didUpdateWith filter: SCContentFilter, for stream: SCStream?) {
-		print(picker.description)
-	}
-	
-	func contentSharingPickerStartDidFailWithError(_ error: any Error) {
-		print(error.localizedDescription)
-	}
-}
+//extension ScreenRecorder: SCContentSharingPickerObserver  {
+//	if #available(macOS 14, *) {
+//		func contentSharingPicker(_ picker: SCContentSharingPicker, didCancelFor stream: SCStream?) {
+//			print("canceleed picker")
+//		}
+//		//	@available(macOS 14, *)
+//		func contentSharingPicker(_ picker: SCContentSharingPicker, didUpdateWith filter: SCContentFilter, for stream: SCStream?) {
+//			print(picker.description)
+//		}
+//	}
+//	
+//	func contentSharingPickerStartDidFailWithError(_ error: any Error) {
+//		print(error.localizedDescription)
+//	}
+//}
